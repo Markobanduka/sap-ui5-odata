@@ -79,12 +79,32 @@
           "target": [
             "TargetInitial"
           ]
-        }
+        },
+        {
+          "name": "Details",
+          "pattern": "user/{user_id}",
+          "target": [
+            "Details"
+          ]
+        },
+          {
+            "name": "Create",
+            "pattern": "create",
+            "target": [
+              "Details"
+            ]
+          }
       ],
       "targets": {
         "TargetInitial": {
           "id": "Initial",
-          "name": "Initial"
+          "name": "Initial",
+          "clearControlAggregation": false
+        },
+        "Details": {
+          "id": "Details",
+          "name": "Details",
+          "clearControlAggregation": false
         }
       }
     },
