@@ -53,12 +53,13 @@
       <semantic:positiveAction>   
         <semantic:PositiveAction
       text="{i18n>save}"
+      press="TriggerSave"
       >
         </semantic:PositiveAction>
     </semantic:positiveAction>
       <semantic:negativeAction>
           <semantic:NegativeAction
-      text="{i18n>delete}" visible="{isSaved}"
+      text="{i18n>delete}" visible="{isSaved}" press="TriggerDelete"
       >
         </semantic:NegativeAction>
       </semantic:negativeAction>

@@ -44,5 +44,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
     _bindView: function (sPath) {
       this.getView().bindElement(sPath);
     },
+    TriggerSave: function () {
+      var Context = this.getView().getBindingContext(),
+        oUser = Context.getObject(),
+        fnCallBack = function () {
+          this.DataRepository.readUsers();
+          window.history.go(-1);
+        }.bind(this);
+      if (oUser.isSaved) {
+        this.DataRepository.updateUser(oUser.id, oUser, fnCallBack);
+      } else {
+        this.DataRepository.createUser(oUser, fnCallBack);
+      }
+    },
+    TriggerDelete: function () {
+      var Context = this.getView().getBindingContext(),
+        oUser = Context.getObject(),
+        fnCallBack = function () {
+          this.DataRepository.readUsers();
+          window.history.go(-1);
+        }.bind(this);
+      this.DataRepository.deleteUser(oUser.id, fnCallBack);
+    },
   });
 });

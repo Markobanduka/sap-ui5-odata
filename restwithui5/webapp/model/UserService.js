@@ -33,8 +33,45 @@ sap.ui.define([], function () {
         }.bind(this),
       });
     },
-    deleteUser: function (sUserId) {},
-    updateUser: function (oUser) {},
-    createUser: function (oData) {},
+    deleteUser: function (sUserId, fnCallBack) {
+      jQuery.ajax({
+        url: this._baseURL + "/users/" + sUserId,
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer " + this._accessToken,
+        },
+        success: function (oUser) {
+          fnCallBack && fnCallBack();
+        }.bind(this),
+      });
+    },
+    updateUser: function (sUserId, oUser, fnCallBack) {
+      jQuery.ajax({
+        url: this._baseURL + "/users/" + sUserId,
+        method: "PUT",
+        headers: {
+          Authorization: "Bearer " + this._accessToken,
+          Accept: "application/json",
+        },
+        data: oUser,
+        success: function () {
+          fnCallBack && fnCallBack();
+        }.bind(this),
+      });
+    },
+    createUser: function (oUser, fnCallBack) {
+      jQuery.ajax({
+        url: this._baseURL + "/users",
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + this._accessToken,
+          Accept: "application/json",
+        },
+        data: oUser,
+        success: function () {
+          fnCallBack && fnCallBack();
+        }.bind(this),
+      });
+    },
   };
 });
