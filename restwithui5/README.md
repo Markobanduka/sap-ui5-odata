@@ -1,36 +1,50 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Fri Feb 06 2026 13:40:17 GMT+0100 (Central European Standard Time)|
-|**App Generator**<br>SAP Fiori Application Generator|
-|**App Generator Version**<br>1.20.0|
-|**Generation Platform**<br>Visual Studio Code|
-|**Template Used**<br>Basic|
-|**Service Type**<br>None|
-|**Service URL**<br>N/A|
-|**Module Name**<br>restwithui5|
-|**Application Title**<br>REST Integration|
-|**Namespace**<br>|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.144.1|
-|**Enable Code Assist Libraries**<br>False|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>False|
+# OData CRUD
 
-## restwithui5
+A modern SAP Fiori-style User Management application built with SAP UI5 MVC architecture and consuming data from an OData service.
 
-An SAP Fiori application.
+The app allows users to view, add, edit, and delete user records, showcasing key SAP UI5 enterprise features
 
-### Starting the generated app
+## Tech Stack
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated application, run the following from the generated application root folder:
+• SAP UI5 / Fiori
 
+• JavaScript (ES6)
+
+• XML Views (HTML5)
+
+• OData Model (remote data source)
+
+• UI5 Routing & Fragments
+
+## Why This Project
+
+This project demonstrates my ability to build enterprise-grade SAP Fiori applications. By working with OData services, MVC architecture, and advanced UI5 patterns like routing and data binding, I gained practical experience in managing real-world enterprise workflows and preparing scalable solutions for business applications.
+
+## Screenshot: SAP Fiori Request Manager
+
+<img src="assets/oData.png" alt="List of Users Screenshot" width="600"/>
+
+## Setup instructions
+
+1️⃣ Clone the Repository git clone cd
+
+2️⃣ Install Node.js (if not installed)
+
+Download Node.js (LTS) from https://nodejs.org
+
+Verify:
+
+node -v npm -v
+
+## Build for Production
+
+```bash
+npm run build
+or
+npm start
+
+
+Opens the app in your browser:
+
+http://localhost:8080
 ```
-    npm start
-```
-
-#### Pre-requisites:
-
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
-
-
